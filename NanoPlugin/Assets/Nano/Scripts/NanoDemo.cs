@@ -49,21 +49,21 @@ public class NanoDemo : MonoBehaviour
 
   public NanoAmount currentBalance = new NanoAmount(0);
 
-  private string password = "wezrule";
-  private string defaultRep = "nano_387tj8fjeo6r35ry5tjppympp8dct4d1ogpis7uaxsw8ywsrgp6shfge7two";
+  private string password = "kafirule";
+  private string defaultRep = "ban_3goobcumtuqe37htu4qwtpkxnjj4jjheyz6e6kke3mro7d8zq5d36yskphqt";
 
   void Start()
   {
     // Initialize RPC & Websocket
     nanoManager = gameObject.AddComponent<NanoManager>();
-    nanoManager.rpcURL = "http://95.216.164.23:28103"; // Update this url to point to your JSON-RPC server
+    nanoManager.rpcURL = "https://kaliumapi.appditto.com/api"; // Update this url to point to your JSON-RPC server
     nanoManager.defaultRep = defaultRep;
 
     nanoWebsocket = gameObject.AddComponent<NanoWebSocket>();
-    nanoWebsocket.url = "ws://95.216.164.23:28104"; // Update this url to point to your websocket server
+    nanoWebsocket.url = "wss://kaliumapi.appditto.com"; // Update this url to point to your websocket server
     nanoManager.Websocket = nanoWebsocket;
 
-    Debug.Log("Private key files located at: " + Path.Combine(Application.persistentDataPath, "Nano"));
+    Debug.Log("Private key files located at: " + Path.Combine(Application.persistentDataPath, "Banano"));
 
     // Update QR codes for arcade
     arcadePrivateKey = NanoUtils.ByteArrayToHexString(NanoUtils.GeneratePrivateKey());

@@ -664,6 +664,6 @@ namespace NanoPlugin
     }
     public string rpcURL;
 
-    public string defaultRep = "nano_387tj8fjeo6r35ry5tjppympp8dct4d1ogpis7uaxsw8ywsrgp6shfge7two";
+    public string defaultRep = "ban_3goobcumtuqe37htu4qwtpkxnjj4jjheyz6e6kke3mro7d8zq5d36yskphqt";
   }
 }

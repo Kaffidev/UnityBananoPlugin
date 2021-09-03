@@ -136,7 +136,7 @@ namespace NanoPlugin
           break;
         }
       }
-      var num_zeroes_to_add = 30;
+      var num_zeroes_to_add = 29;
       if (decimalPoint != -1)
       {
         str = str.Remove(decimalPoint, 1);
@@ -165,13 +165,13 @@ namespace NanoPlugin
     public static string RawToNano(string str)
     {
       // Insert a decimal 30 decimal places from the right
-      if (str.Length <= 30)
+      if (str.Length <= 29)
       {
-        str = "0." + new String('0', 30 - str.Length) + str;
+        str = "0." + new String('0', 29 - str.Length) + str;
       }
       else
       {
-        var decimal_index = str.Length - 30;
+        var decimal_index = str.Length - 29;
         str = str.Insert(decimal_index, ".");
       }
 
@@ -391,7 +391,7 @@ namespace NanoPlugin
 
     public static string PublicKeyToAddress(byte[] publicKey)
     {
-      var address = "nano_" + NanoEncode(publicKey);
+      var address = "ban_" + NanoEncode(publicKey);
 
       var blake = Blake2B.Create(new Blake2BConfig() { OutputSizeInBytes = 5 });
       blake.Init();
@@ -460,7 +460,7 @@ namespace NanoPlugin
       }
 
       // Address must begin with nano_
-      if (!address.Substring(0, 5).Equals("nano_"))
+      if (!address.Substring(0, 5).Equals("ban_"))
       {
         return null;
       }
