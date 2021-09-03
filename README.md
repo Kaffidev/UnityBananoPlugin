@@ -1,7 +1,5 @@
-# NanoPlugin
-Plugin for integrating the Nano cryptocurrency into Unity.  
-
-Available on the [Unity asset store](https://assetstore.unity.com/packages/tools/integration/nano-190960)  
+# BananoPlugin
+Plugin for integrating the Banano cryptocurrency into Unity.  
 
 Tested on Windows/Linux/MacOS/Android/iOS/HTML with Unity 2020.3.2f1
 
@@ -34,7 +32,7 @@ public class NanoDemo : MonoBehaviour
     // Initialize the NanoManager & NanoWebsocket
     nanoManager = gameObject.AddComponent<NanoManager>();
     nanoManager.rpcURL = "http://95.216.164.23:28103"; // Modify url to RPC server host:port
-    nanoManager.defaultRep = "nano_387tj8fjeo6r35ry5tjppympp8dct4d1ogpis7uaxsw8ywsrgp6shfge7two";
+    nanoManager.defaultRep = "ban_387tj8fjeo6r35ry5tjppympp8dct4d1ogpis7uaxsw8ywsrgp6shfge7two";
 
     nanoWebsocket = gameObject.AddComponent<NanoWebSocket>();
     nanoWebsocket.url = "ws://95.216.164.23:28104"; // Modify url to websocket server host:port
@@ -57,16 +55,16 @@ public class NanoDemo : MonoBehaviour
 ### Convert a hex string to byte[]
 `byte[] privateKey = NanoUtils.HexStringToByteArray(hexPrivateKey);`
 
-### Get the nano_ address from the seed
+### Get the ban_ address from the seed
 `string address = NanoUtils.PrivateKeyToAddress(privateKey);`
 
 ### Get the public key hex string from the seed
 `string publicKey = NanoUtils.PrivateKeyToPublicKeyHexString(privateKey);`
 
-### Convert a nano_ address and public key hex string
+### Convert a ban_ address and public key hex string
 `string publicKey = NanoUtils.AddressToPublicKeyHexString(address);`
 
-### Convert a public key hex string to nano_ address
+### Convert a public key hex string to ban_ address
 `string address = NanoUtils.PublicKeyToAddress(publicKey);`
 
 ## Individual node functions
@@ -193,10 +191,10 @@ Requires running a nano node, as well as `npm` and `nodejs` being installed.
 5. `node server.js`
 
 A nano node is required to be running which the websocket & http server (for RPC requests) will communicate with. Websocket & RPC should be enabled in the `node-config.toml` nano file.   
-A http server (for RPC requests) is definitely needed for communicating with the nano node via JSON-RPC, a test nodejs script is supplied for this called `server.js`. A websocket server to receive notifications from the nano network is highly recommended to make the most use of the plugin functionality. Another test server called `websocket_node.js` listening for confirmations for blocks in real-time on the nano network. `server_work_callback.js` communicate with dpow (distributed POW) for work generation, a `work_peer` in `node-config.toml` should be set up for this, all these scripts are found in the ./TestServer subdirectory. Running `server.js` will also run `websocket_node.js` & `server_work_callback,js`. The websocket script makes 2 connections to the node, 1 is filtered output and 1 gets all websocket events (usual for visualisers). If you only need filtered output (recommended!) then disable `allow_listen_all=false` in `config.js`, this is the default.  
+A http server (for RPC requests) is definitely needed for communicating with the nano node via JSON-RPC, a test nodejs script is supplied for this called `server.js`. A websocket server to receive notifications from the nano network is highly recommended to make the most use of the plugin functionality. Another test server called `websocket_node.js` listening for confirmations for blocks in real-time on the nano network. `server_work_callback.js` communicate with dpow (distributed POW) for work generation, a `work_peer` in `node-config.toml` should be set up for this, all these scripts are found in the ./TestServer subdirectory. Running `server.js` will also run `websocket_node.js` & `server_work_callback,js`. The websocket script makes 2 connections to the node, 1 is filtered output and 1 gets all websocket events (usual for visualisers). If you only need filtered output (recommended!) then disable `allow_listen_all=false` in `config.js`, this is the default.
 
 Limitations
 - The test servers should not be used in production due to lack of security/ddos protection. Likely canditates for a future version are the NanoRPCProxy.
 
-Any donation contributions are welcome: nano_15qry5fsh4mjbsgsqj148o8378cx5ext4dpnh5ex99gfck686nxkiuk9uouy
+Any donation contributions to real owner are welcome: nano_15qry5fsh4mjbsgsqj148o8378cx5ext4dpnh5ex99gfck686nxkiuk9uouy
 ![download](https://user-images.githubusercontent.com/650038/97703969-70d90c80-1aa9-11eb-80b6-30bfad6dce31.png)

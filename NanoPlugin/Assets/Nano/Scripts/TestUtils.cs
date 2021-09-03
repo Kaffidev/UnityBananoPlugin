@@ -276,14 +276,14 @@ public class TestUtils : MonoBehaviour
 
     byte[] bytes = NanoUtils.HexStringToByteArray("E989DE925A4EDEE45447158557AD1409450315491F147F4AAA8F37DCA355354A");
 
-    byte[] b = NanoUtils.AddressToPublicKeyByteArray("nano_3kqdiqmqiojr1aqqj51aq8bzz5jtwnkmhb38qwf3ppngo8uhhzkdkn7up7rp");
+    byte[] b = NanoUtils.AddressToPublicKeyByteArray("ban_3kqdiqmqiojr1aqqj51aq8bzz5jtwnkmhb38qwf3ppngo8uhhzkdkn7up7rp");
     string s1 = NanoUtils.SignHash("E989DE925A4EDEE45447158557AD1409450315491F147F4AAA8F37DCA355354A", bytes);
     string s2 = NanoUtils.PublicKeyToAddress(bytes);
     string s3 = NanoUtils.ByteArrayToHexString(bytes);
 
     var prvKey = NanoUtils.GeneratePrivateKey();
     var password = "cheese_cake" + Random.value;
-    var filename = "privateKey1.nano";
+    var filename = "privateKey1.banano";
 
     NanoUtils.SavePrivateKey(NanoUtils.ByteArrayToHexString(prvKey), filename, password);
     var originalPrivateKey = NanoUtils.ByteArrayToHexString(prvKey);
