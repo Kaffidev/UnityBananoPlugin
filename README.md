@@ -141,13 +141,13 @@ private IEnumerator SendHandler()
   });
 }
 ```
-### Receive nano, waiting for confirmation from the network
+### Receive banano, waiting for confirmation from the network
 `yield return nanoManager.ReceiveWaitConf(address, pendingBlock, privateKey, (error, hash) => { }`
 
-### Receive nano, without waiting for confirmation from the network
+### Receive banano, without waiting for confirmation from the network
 `yield return nanoManager.Receive(address, pendingBlock, privateKey, (error, hash) => { }`
 
-### Automatically pocket nano
+### Automatically pocket banano
 ```
 nanoManager.AutomatePocketing(address, privateKey, (block) =>
   {
