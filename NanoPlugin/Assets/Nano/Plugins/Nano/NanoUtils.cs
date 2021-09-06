@@ -348,7 +348,7 @@ namespace NanoPlugin
     public static Texture2D GenerateQRCodeTextureWithAmount(
       int pixelsPerModule, string account, string amount, int margin)
     {
-      string qrString = "nano:" + account;
+      string qrString = "banano:" + account;
       if (amount != "")
       {
         qrString += "?amount=" + amount;
@@ -539,7 +539,7 @@ namespace NanoPlugin
     // Loads the file and decrypts the encrypted private key with the password
     public static string LoadPrivateKey(string seedFilename, string password)
     {
-      string file = Path.Combine(Application.persistentDataPath, "Nano", seedFilename);
+      string file = Path.Combine(Application.persistentDataPath, "Banano", seedFilename);
 
       if (File.Exists(file))
       {
@@ -556,7 +556,7 @@ namespace NanoPlugin
     public static string[] GetPrivateKeyFiles()
     {
       // Loop through all files in data path
-      string directory = Path.Combine(Application.persistentDataPath, "Nano");
+      string directory = Path.Combine(Application.persistentDataPath, "Banano");
       if (Directory.Exists(directory))
       {
         return Directory.EnumerateFiles(directory).Select(Path.GetFileName).ToArray();
