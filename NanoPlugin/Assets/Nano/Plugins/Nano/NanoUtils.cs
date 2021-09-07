@@ -49,7 +49,7 @@ namespace NanoPlugin
      */
     public static bool ValidateNano(string nano)
     {
-      if (nano.Length > 40 || nano.Length == 0)
+      if (nano.Length > 39 || nano.Length == 0)
       {
         return false;
       }
