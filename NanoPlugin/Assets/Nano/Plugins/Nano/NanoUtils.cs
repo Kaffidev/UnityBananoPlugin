@@ -454,19 +454,19 @@ namespace NanoPlugin
     public static byte[] AddressToPublicKeyByteArray(string address)
     {
       // Check length is valid
-      if (address.Length != 65)
+      if (address.Length != 64)
       {
         return null;
       }
 
-      // Address must begin with nano_
-      if (!address.Substring(0, 5).Equals("ban_"))
+      // Address must begin with ban_
+      if (!address.Substring(0, 4).Equals("ban_"))
       {
         return null;
       }
 
-      // Remove nano_
-      var publicKeyPart = address.Substring(5, address.Length - 8);
+      // Remove ban_
+      var publicKeyPart = address.Substring(4, address.Length - 7);
 
       var binaryString = "";
       for (int i = 0; i < publicKeyPart.Length; i++)
